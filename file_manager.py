@@ -1,6 +1,9 @@
 import os
 from shutil import move
-#path='F:\\example.txt'; extension = '.exe'; name = 'test'
+
+#this function will rename every file with the extension in the path to the name passed as paramter followed by a count;
+#this parameters (path='F:\\example', extension = '.png', name = 'test') would result in:
+#test1.png;test2.png;test3.png;test4.png;test5.png...
 def rename_files(path, extension, name):
     folder = os.listdir(path)
     count = 0
@@ -12,7 +15,8 @@ def rename_files(path, extension, name):
             os.rename(old,new)
             count = count + 1
 
-#function that organizes the files in folders separated by extension
+#this function organize the files in folders separated by extension;
+#example: if there's files .png and .mp4 in a folder it will create a folder for .png files and a folder for .mp4 files and move them respectively.
 def organize_extensions(path):
     folder = os.listdir(path)
     files = []
